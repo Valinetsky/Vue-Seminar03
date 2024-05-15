@@ -178,6 +178,10 @@ a {
   padding-right: calc(50% - 600px);
 }
 
+.logo__text {
+  font-family: "DM Serif Display";
+}
+
 .header {
   margin-top: 53px;
   margin-bottom: 57px;

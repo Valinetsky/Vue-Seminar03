@@ -59,7 +59,8 @@ Vue.component("page-header", {
   </div>
 </header>`,
 });
-var main__banner = {
+
+Vue.component("main__banner", {
     template: `
 <section class="baner center">
   <div class="baner__wrap">
@@ -78,7 +79,19 @@ var main__banner = {
     </div>
   </div>
 </section>`,
-};
+});
+
+Vue.component("banner", {
+    props: ["image", "box"],
+    template: `
+<section class="banner center" :style="{'background':'url(img/blog_details_banner.jpg) no-repeat center / cover'}">
+      <div v-if="box" class="banner__intro">
+        <h1 class="banner__intro-title">Articles & News</h1>
+        <p class="banner__intro-text">Home / Blog</p>
+      </div>
+</section>`,
+});
+
 var main__project = {
     template: `
   <section class="project center">
@@ -182,7 +195,7 @@ Vue.component("page-footer", {
   <div class="footer__logo">
     <div class="header__logo">
       <img src="img/Logo.svg" alt="logo" />
-      <p class="logo__text">Interno</p>
+    <p class="logo__text">Interno</p>
     </div>
     <p class="footer__logo-text">
       It is a long established fact that a reader will be distracted
@@ -254,6 +267,31 @@ Vue.component("product", {
       `,
 });
 
+Vue.component("products_small", {
+    data() {
+        return globalCardsData;
+    },
+    props: ["counter"],
+    template: `
+  <div class="blog__items">
+      <product v-for="(card, index) in cards.slice(0, 3)" :key="card.id" :image="card.image" :design="card.design" :heading="card.heading" :timing="card.timing" :class="{ 'blog__item-select': index === 1 }"></product>
+
+  </div>
+          `,
+});
+
+Vue.component("products_all", {
+    data() {
+        return globalCardsData;
+    },
+    props: ["counter"],
+    template: `
+  <div class="blog__items" >
+    <product v-for="(card, index) in cards" :key="card.id" :image="card.image" :design="card.design" :heading="card.heading" :timing="card.timing" :class="{ 'blog__item-select': index === 1 }"></product>
+  </div>
+          `,
+});
+
 Vue.component("main_article_and_news", {
     data() {
         return globalCardsData;
@@ -267,9 +305,7 @@ Vue.component("main_article_and_news", {
     readable content of a page when lookings at its layouts the points of
     using.
   </p>
-  <div class="blog__items">
-      <product v-for="(card, index) in cards.slice(0, 3)" :key="card.id" :image="card.image" :design="card.design" :heading="card.heading" :timing="card.timing" :class="{ 'blog__item-select': index === 1 }"></product>
-
+  <products_small></products_small>
   </div>
 </section>
         `,
@@ -288,9 +324,7 @@ Vue.component("blog_article_and_news", {
     readable content of a page when lookings at its layouts the points of
     using.
   </p>
-  <div class="blog__items" >
-    <product v-for="(card, index) in cards" :key="card.id" :image="card.image" :design="card.design" :heading="card.heading" :timing="card.timing" :class="{ 'blog__item-select': index === 1 }"></product>
-  </div>
+<products_all></products_all>
 </section>
           `,
 });
@@ -298,7 +332,7 @@ Vue.component("blog_article_and_news", {
 new Vue({
     el: "#app1",
     components: {
-        main__banner: main__banner,
+        // main__banner: main__banner,
         main__project: main__project,
         main__counter: main__counter,
     },
