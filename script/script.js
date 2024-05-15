@@ -84,9 +84,12 @@ Vue.component("main__banner", {
 Vue.component("banner", {
     props: ["image", "box"],
     template: `
-<section class="banner center" :style="{'background':'url(img/blog_details_banner.jpg) no-repeat center / cover'}">
+<section class="banner center"  :style="{backgroundImage:'url(' + image + ')', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundSize: 'cover'}">
+
+
+
       <div v-if="box" class="banner__intro">
-        <h1 class="banner__intro-title">Articles & News</h1>
+        <h1 class="banner__intro-title">Articles & News {{box}}</h1>
         <p class="banner__intro-text">Home / Blog</p>
       </div>
 </section>`,
