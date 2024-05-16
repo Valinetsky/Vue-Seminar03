@@ -383,7 +383,35 @@ const articles = [
     },
 ];
 
-const countedTags = () => articles.filter;
+function addValue(input, property) {
+    let output = [];
+    for (let i = 0; i < input.length; ++i) {
+        if (!output.includes(input[i][property])) {
+            output.push(input[i][property]);
+        }
+    }
+    return output;
+}
+
+const tagsArray = addValue(articles, "tag");
+
+const articlesArray = [...articles];
+
+console.log(tagsArray);
+console.log(articlesArray);
+
+Vue.component("tagsbox", {
+    props: ["tagsArray"],
+    data() {
+        return tagsArray;
+    },
+
+    template: `
+<div class="tags__container">
+    <div class="tags__item" v-for="(tag, index) in tagsArray" :key="index">{{tag}}</div>
+</div>
+        `,
+});
 
 new Vue({
     el: "#app1",
