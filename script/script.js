@@ -84,10 +84,7 @@ Vue.component("main__banner", {
 Vue.component("banner", {
     props: ["image", "box"],
     template: `
-<section class="banner center"  :style="{backgroundImage:'url(' + image + ')', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundSize: 'cover'}">
-
-
-
+<section class="banner center" :style="{backgroundImage:'url(' + image + ')', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundSize: 'cover'}">
       <div v-if="box" class="banner__intro">
         <h1 class="banner__intro-title">Articles & News {{box}}</h1>
         <p class="banner__intro-text">Home / Blog</p>
@@ -192,6 +189,7 @@ var main__counter = {
   </section>
     `,
 };
+
 Vue.component("page-footer", {
     template: `    
 <footer class="footer center">
@@ -278,7 +276,6 @@ Vue.component("products_small", {
     template: `
   <div class="blog__items">
       <product v-for="(card, index) in cards.slice(0, 3)" :key="card.id" :image="card.image" :design="card.design" :heading="card.heading" :timing="card.timing" :class="{ 'blog__item-select': index === 1 }"></product>
-
   </div>
           `,
 });
@@ -332,89 +329,55 @@ Vue.component("blog_article_and_news", {
           `,
 });
 
-const articles = [
-    {
-        header: "TAG KITCHEN : ARTICLE01 Let’s Get Solution for Building Construction Work",
-        picture: "img/articles/article01tag-kitchen.svg",
-        date: "26 December, 2022",
-        info: "Interior/Home/Decore",
-        text: "<p>TAG KITCHEN : ARTICLE01  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p>",
-        tag: "Kitchen",
-    },
-    {
-        header: "TAG KITCHEN : ARTICLE02 Let’s Get Solution for Building Construction Work",
-        picture: "img/articles/article02tag-kitchen.svg",
-        date: "26 December, 2022",
-        info: "Interior/Home/Decore",
-        text: "<p>TAG KITCHEN : ARTICLE02  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p>",
-        tag: "Kitchen",
-    },
-    {
-        header: "TAG KITCHEN : ARTICLE03 Let’s Get Solution for Building Construction Work",
-        picture: "img/articles/article03tag-kitchen.svg",
-        date: "26 December, 2022",
-        info: "Interior/Home/Decore",
-        text: "<p>TAG KITCHEN : ARTICLE03  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p>",
-        tag: "Kitchen",
-    },
-    {
-        header: "TAG BEDROOM : ARTICLE01 Let’s Get Solution for Building Construction Work",
-        picture: "img/articles/article01tag-bedroom.svg",
-        date: "26 December, 2022",
-        info: "Interior/Home/Decore",
-        text: "<p>TAG BEDROOM : ARTICLE01  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p>",
-        tag: "Bedroom",
-    },
-    {
-        header: "TAG BEDROOM : ARTICLE02 Let’s Get Solution for Building Construction Work",
-        picture: "img/articles/article02tag-bedroom.svg",
-        date: "26 December, 2022",
-        info: "Interior/Home/Decore",
-        text: "<p>TAG BEDROOM : ARTICLE02  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p>",
-        tag: "Bedroom",
-    },
-    {
-        header: "TAG WORKSHOP : ARTICLE01 Let’s Get Solution for Building Construction Work",
-        picture: "img/articles/article01tag-workshop.svg",
-        date: "26 December, 2022",
-        info: "Interior/Home/Decore",
-        text: "<p>TAG WORKSHOP : ARTICLE01  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p>",
-        tag: "Workshop",
-    },
-];
-
-function addValue(input, property) {
-    let output = [];
-    for (let i = 0; i < input.length; ++i) {
-        if (!output.includes(input[i][property])) {
-            output.push(input[i][property]);
-        }
-    }
-    return output;
-}
-
-const tagsArray = addValue(articles, "tag");
-
-const articlesArray = [...articles];
-
-console.log(tagsArray);
-console.log(articlesArray);
-
 Vue.component("tagsbox", {
-    props: ["tagsArray"],
-    data() {
-        return tagsArray;
-    },
+    props: ["tagsarray"],
 
     template: `
 <div class="tags__container">
-    <div class="tags__item" v-for="(tag, index) in tagsArray" :key="index">{{tag}}</div>
+    <div class="tags__item" v-for="(tag, index) in tagsarray" :key="index">{{tag}}</div>
+</div>
+        `,
+});
+
+Vue.component("blogarticle", {
+    props: ["articlesarray"],
+
+    template: `
+<div class="articles">
+	<div class="blogarticle" v-for="(blogarticle, index) in articlesarray" :key="index">    
+        <h2 class="blogarticle__header">
+            {{blogarticle.header}}
+        </h2>
+        <div class="blogarticle__illustration">
+            <img :src="blogarticle.picture"
+                 :alt="blogarticle.picture"
+                 class="blogarticle__image"
+            />
+        </div>
+        <div class="blogarticle__subscript">
+            <p class="blogarticle__date">{{blogarticle.date}}</p>
+            <p class="blogarticle__info">{{blogarticle.info}}</p>
+        </div>
+        <div class="blogarticle__content" v-html="blogarticle.text">
+          
+        </div>
+		<div class="blogarticle__divider">
+			<p class="divider__sign">”</p>
+			<p class="divider__text">
+				The details are not the details. They make the design.
+			</p>
+		</div>
+    </div>
 </div>
         `,
 });
 
 new Vue({
     el: "#app1",
+    data: {
+        articlesarray: articlesarray,
+        tagsarray: tagsarray,
+    },
     components: {
         // main__banner: main__banner,
         main__project: main__project,
@@ -423,6 +386,9 @@ new Vue({
 });
 new Vue({
     el: "#app2",
+    data: {
+        tagsarray: tagsarray,
+    },
 });
 new Vue({
     el: "#app3",

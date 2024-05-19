@@ -47,4 +47,29 @@ const articles = [
         text: "<p>TAG WORKSHOP : ARTICLE01  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p>",
         tag: "Workshop",
     },
+    {
+        header: "TAG Another TAG : ARTICLE01 Let’s Get Solution for Building Construction Work",
+        picture: "img/articles/",
+        date: "26 December, 2022",
+        info: "Interior/Home/Decore",
+        text: "<p>TAG Another TAG : ARTICLE01  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit iste? Nisi exercitationem delectus molestiae alias soluta quidem aliquid atque quia deserunt unde pariatur nam harum, cupiditate dignissimos non asperiores natus libero. Numquam, vitae totam corporis fugit optio, quisquam voluptate provident, omnis temporibus nihil voluptas reiciendis. Praesentium ut rem beatae.</p>",
+        tag: "Another TAG",
+    },
 ];
+
+function addValue(input, property) {
+    let output = [];
+    for (let i = 0; i < input.length; ++i) {
+        if (!output.includes(input[i][property])) {
+            output.push(input[i][property]);
+        }
+    }
+    return output;
+}
+
+const tagsarray = addValue(articles, "tag");
+
+const articlesarray = [...articles];
+
+console.log(tagsarray);
+console.log(articlesarray);

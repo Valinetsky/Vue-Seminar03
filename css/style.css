@@ -668,23 +668,23 @@ a {
           justify-content: space-between;
 }
 
-.article {
+.blogarticle {
   width: 800px;
 }
-.article__header {
+.blogarticle__header {
   font-family: DM Serif Display;
   font-size: 50px;
   line-height: 62.5px;
   letter-spacing: 0.02em;
   margin-bottom: 21px;
 }
-.article__illustration {
+.blogarticle__illustration {
   margin-bottom: 46px;
 }
-.article__image {
+.blogarticle__image {
   border-radius: 50px;
 }
-.article__subscript {
+.blogarticle__subscript {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -696,10 +696,10 @@ a {
   letter-spacing: 0.01em;
   margin-bottom: 48px;
 }
-.article__content p {
+.blogarticle__content p {
   margin-bottom: 48px;
 }
-.article__divider {
+.blogarticle__divider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
