@@ -330,21 +330,39 @@ Vue.component("blog_article_and_news", {
 });
 
 Vue.component("tagsbox", {
-    props: ["tagsarray"],
+    props: ["tagsarray", "articlesarray"],
+    methods: {
+        selecttag(index) {
+            // `this` в методе указывает на текущий активный экземпляр
+            console.log("Привет, " + tagsarray[index] + "!");
+            // articlesarray = articles.forEach.filter(
+            //     (item) => item.tag === tagsarray[index]
+            // );
+            console.log(articlesarray);
+            console.log(
+                articlesarray.filter((item) => item.tag === tagsarray[index])
+            );
+            return articlesarray.filter(
+                (item) => item.tag === tagsarray[index]
+            );
+        },
+    },
+    getArticles: function () {
+        return articlesarray.filter((item) => item.tag === tagsarray[index]);
+    },
 
     template: `
 <div class="tags__container">
-    <div class="tags__item" v-for="(tag, index) in tagsarray" :key="index">{{tag}}</div>
+    <div @click="selecttag(index)" class="tags__item" v-for="(tag, index) in tagsarray" :key="index">{{tag}}</div>
 </div>
         `,
 });
 
 Vue.component("blogarticle", {
-    props: ["articlesarray"],
-
+    props: ["articlesarray", "getArticles"],
     template: `
 <div class="articles">
-	<div class="blogarticle" v-for="(blogarticle, index) in articlesarray" :key="index">    
+	<div class="blogarticle" v-for="(blogarticle, index) in getArticles" :key="index">    
         <h2 class="blogarticle__header">
             {{blogarticle.header}}
         </h2>

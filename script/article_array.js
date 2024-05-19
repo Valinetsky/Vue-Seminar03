@@ -69,7 +69,7 @@ function addValue(input, property) {
 
 const tagsarray = addValue(articles, "tag");
 
-const articlesarray = [...articles];
+let articlesarray = [...articles];
 
 console.log(tagsarray);
 console.log(articlesarray);
