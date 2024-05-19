@@ -418,7 +418,7 @@ Vue.component("tagsandarticles", {
     },
     template: `
   <div class="articles">
-	  <div class="blogarticle" v-for="(blogarticle, index) in getArticles" :key="index">   
+	  <div class="blogarticle" v-for="(blogarticle, index) in selecttag" :key="index">   
         <h2 class="blogarticle__header">
             {{blogarticle.header}}
         </h2>
@@ -446,7 +446,7 @@ Vue.component("tagsandarticles", {
   <div class="tags">
       <h2 class="tags__header">Tags</h2>
           <div class="tags__container">
-            <div @click="getArticle(index)" class="tags__item" v-for="(tag, index) in tagsarray" :key="index">{{tag}}</div>
+            <div @click="getArticle" class="tags__item" v-for="(tag, index) in tagsarray" :key="index">{{tag}}</div>
           </div>
   </div>
 </div>
