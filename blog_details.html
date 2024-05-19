@@ -18,16 +18,19 @@
             <page-header></page-header>
             <banner image="img/blog_details_banner.jpg" :box="false"></banner>
             <section class="content center">
-                <tagsandarticles></tagsandarticles>
-                <div class="articles">
-                    <blogarticle :articlesarray="articlesarray"></blogarticle>
-                    <!-- <div class="article__divider">
+                <tagsandarticles
+                    :articlesarray="articlesarray"
+                    :tagsarray="tagsarray"
+                ></tagsandarticles>
+
+                <!-- <blogarticle :articlesarray="articlesarray"></blogarticle> -->
+                <!-- <div class="article__divider">
                     <p class="divider__sign">”</p>
                     <p class="divider__text">
                         The details are not the details. They make the design.
                     </p>
                 </div> -->
-                    <!-- <div class="article">
+                <!-- <div class="article">
                     <h2 class="article__header">
                         Let’s Get Solution for Building Construction Work
                     </h2>
@@ -75,11 +78,11 @@
                         </p>
                     </div>
                 </div> -->
-                </div>
-                <div class="tags">
+
+                <!-- <div class="tags">
                     <h2 class="tags__header">Tags</h2>
                     <tagsbox :tagsarray="tagsarray"></tagsbox>
-                </div>
+                </div> -->
             </section>
         </div>
 
