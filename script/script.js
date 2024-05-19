@@ -362,7 +362,7 @@ Vue.component("blogarticle", {
     props: ["articlesarray", "getArticles"],
     template: `
 <div class="articles">
-	<div class="blogarticle" v-for="(blogarticle, index) in getArticles" :key="index">    
+	<div class="blogarticle" v-for="(blogarticle, index) in articlesarray" :key="index">   
         <h2 class="blogarticle__header">
             {{blogarticle.header}}
         </h2>
@@ -388,6 +388,69 @@ Vue.component("blogarticle", {
     </div>
 </div>
         `,
+});
+
+Vue.component("tagsandarticles", {
+    props: ["tagsarray", "articlesarray"],
+    methods: {
+        selecttag() {
+            // `this` в методе указывает на текущий активный экземпляр
+            console.log("Привет, " + tagsarray[index] + "!");
+
+            console.log(articlesarray);
+            console.log(
+                articlesarray.filter((item) => item.tag === tagsarray[index])
+            );
+            return articlesarray.filter(
+                (item) => item.tag === tagsarray[index]
+            );
+        },
+    },
+    computed: {
+        getArticles: function (index) {
+            if (index === undefined) {
+                return articlesarray;
+            }
+            return articlesarray.filter(
+                (item) => item.tag === tagsarray[index]
+            );
+        },
+    },
+    template: `
+  <div class="articles">
+	  <div class="blogarticle" v-for="(blogarticle, index) in getArticles" :key="index">   
+        <h2 class="blogarticle__header">
+            {{blogarticle.header}}
+        </h2>
+        <div class="blogarticle__illustration">
+            <img :src="blogarticle.picture"
+                 :alt="blogarticle.picture"
+                 class="blogarticle__image"
+            />
+        </div>
+        <div class="blogarticle__subscript">
+            <p class="blogarticle__date">{{blogarticle.date}}</p>
+            <p class="blogarticle__info">{{blogarticle.info}}</p>
+        </div>
+        <div class="blogarticle__content" v-html="blogarticle.text">
+          
+        </div>
+		<div class="blogarticle__divider">
+			<p class="divider__sign">”</p>
+			<p class="divider__text">
+				The details are not the details. They make the design.
+			</p>
+		</div>
+   
+</div>
+  <div class="tags">
+      <h2 class="tags__header">Tags</h2>
+          <div class="tags__container">
+            <div @click="getArticle(index)" class="tags__item" v-for="(tag, index) in tagsarray" :key="index">{{tag}}</div>
+          </div>
+  </div>
+</div>
+`,
 });
 
 new Vue({
