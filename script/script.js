@@ -165,6 +165,7 @@ var main__project = {
   </section>
     `,
 };
+
 var main__counter = {
   template: `
   <section class="counter center">
@@ -333,7 +334,7 @@ Vue.component("tagsbox", {
   data() {
     return tagsarray, articlesarray;
   },
-  props: ["tagsarray", "articlesarray"],
+  // props: ["tagsarray", "articlesarray"],
   methods: {
     selecttag(index) {
       // `this` в методе указывает на текущий активный экземпляр
@@ -393,7 +394,7 @@ Vue.component("blogarticle", {
 
 Vue.component("tagsandarticles", {
   data() {
-    return tagsarray, articlesarray;
+    return articlesarray
   },
   props: ["tagsarray", "articlesarray"],
   methods: {
@@ -409,12 +410,12 @@ Vue.component("tagsandarticles", {
     },
   },
   computed: {
-    getArticles: function (index) {
-      if (index === undefined) {
-        return articlesarray;
-      }
-      return articlesarray.filter((item) => item.tag === tagsarray[index]);
-    },
+    // getArticles: function (index) {
+    //   if (index === undefined) {
+    //     return articlesarray;
+    //   }
+    //   return articlesarray.filter((item) => item.tag === tagsarray[index]);
+    // },
   },
   template: `
   <div class="articles">
@@ -469,6 +470,7 @@ new Vue({
   el: "#app2",
   data: {
     tagsarray: tagsarray,
+    articlesarray: articlesarray,
   },
 });
 new Vue({

@@ -17,76 +17,18 @@
     <div id="app1">
       <page-header></page-header>
       <banner image="img/blog_details_banner.jpg" :box="false"></banner>
-      <section class="content center">
-        <tagsandarticles
-          :articlesarray="articlesarray"
-          :tagsarray="tagsarray"
-        ></tagsandarticles>
-
-        <blogarticle :articlesarray="articlesarray"></blogarticle>
-        <!-- <div class="article__divider">
-                    <p class="divider__sign">”</p>
-                    <p class="divider__text">
-                        The details are not the details. They make the design.
-                    </p>
-                </div> -->
-        <!-- <div class="article">
-                    <h2 class="article__header">
-                        Let’s Get Solution for Building Construction Work
-                    </h2>
-                    <div class="article__illustration">
-                        <img
-                            src="img/articles/article01tag-workshop.svg"
-                            alt="article01tag-bedroom"
-                            class="article__image"
-                        />
-                    </div>
-                    <div class="article__subscript">
-                        <p class="article__date">26 December, 2022</p>
-                        <p class="article__info">Interior/Home/Decore</p>
-                    </div>
-                    <div class="article__content">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Vel, sit iste? Nisi exercitationem delectus
-                            molestiae alias soluta quidem aliquid atque quia
-                            deserunt unde pariatur nam harum, cupiditate
-                            dignissimos non asperiores natus libero. Numquam,
-                            vitae totam corporis fugit optio, quisquam voluptate
-                            provident, omnis temporibus nihil voluptas
-                            reiciendis. Praesentium ut rem beatae.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Vel, sit iste? Nisi exercitationem delectus
-                            molestiae alias soluta quidem aliquid atque quia
-                            deserunt unde pariatur nam harum, cupiditate
-                            dignissimos non asperiores natus libero. Numquam,
-                            vitae totam corporis fugit optio, quisquam voluptate
-                            provident, omnis temporibus nihil voluptas
-                            reiciendis. Praesentium ut rem beatae.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Vel, sit iste? Nisi exercitationem delectus
-                            molestiae alias soluta quidem aliquid atque quia
-                            deserunt unde pariatur nam harum, cupiditate
-                            dignissimos non asperiores natus libero. Numquam,
-                            vitae totam corporis fugit optio, quisquam voluptate
-                            provident, omnis temporibus nihil voluptas
-                            reiciendis. Praesentium ut rem beatae.
-                        </p>
-                    </div>
-                </div> -->
-
-        <!-- <div class="tags">
-                    <h2 class="tags__header">Tags</h2>
-                    <tagsbox :tagsarray="tagsarray"></tagsbox>
-                </div> -->
-      </section>
     </div>
+    
+    <div id="app2">
+      <section class="content center">
+        <blogarticle :articlesarray="articlesarray"></blogarticle>
+        <div class="tags">
+          <h2 class="tags__header">Tags</h2>
+          <tagsbox :tagsarray="tagsarray"></tagsbox>
+        </div>
+      </section>
 
-    <div id="app2"></div>
+    </div>
 
     <div id="app3">
       <page-footer></page-footer>
