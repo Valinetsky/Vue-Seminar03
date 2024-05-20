@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Interior Design Website Blog</title>
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,400;0,500;1,400;1,500&display=swap"
-            rel="stylesheet"
-        />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interior Design Website Blog</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <body>
-        <div id="app1">
-            <page-header></page-header>
-            <banner image="img/blog_details_banner.jpg" :box="false"></banner>
-            <section class="content center">
-                <tagsandarticles
-                    :articlesarray="articlesarray"
-                    :tagsarray="tagsarray"
-                ></tagsandarticles>
+  <body>
+    <div id="app1">
+      <page-header></page-header>
+      <banner image="img/blog_details_banner.jpg" :box="false"></banner>
+      <section class="content center">
+        <tagsandarticles
+          :articlesarray="articlesarray"
+          :tagsarray="tagsarray"
+        ></tagsandarticles>
 
-                <!-- <blogarticle :articlesarray="articlesarray"></blogarticle> -->
-                <!-- <div class="article__divider">
+        <blogarticle :articlesarray="articlesarray"></blogarticle>
+        <!-- <div class="article__divider">
                     <p class="divider__sign">”</p>
                     <p class="divider__text">
                         The details are not the details. They make the design.
                     </p>
                 </div> -->
-                <!-- <div class="article">
+        <!-- <div class="article">
                     <h2 class="article__header">
                         Let’s Get Solution for Building Construction Work
                     </h2>
@@ -79,21 +79,21 @@
                     </div>
                 </div> -->
 
-                <!-- <div class="tags">
+        <!-- <div class="tags">
                     <h2 class="tags__header">Tags</h2>
                     <tagsbox :tagsarray="tagsarray"></tagsbox>
                 </div> -->
-            </section>
-        </div>
+      </section>
+    </div>
 
-        <div id="app2"></div>
+    <div id="app2"></div>
 
-        <div id="app3">
-            <page-footer></page-footer>
-        </div>
+    <div id="app3">
+      <page-footer></page-footer>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        <script src="script/article_array.js"></script>
-        <script src="script/script.js"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script/article_array.js"></script>
+    <script src="script/script.js"></script>
+  </body>
 </html>
