@@ -18,16 +18,15 @@
       <page-header></page-header>
       <banner image="img/blog_details_banner.jpg" :box="false"></banner>
     </div>
-    
+
     <div id="app2">
       <section class="content center">
-        <blogarticle :articlesarray="articlesarray"></blogarticle>
+        <blogarticle :articles="articles"></blogarticle>
         <div class="tags">
           <h2 class="tags__header">Tags</h2>
-          <tagsbox :tagsarray="tagsarray"></tagsbox>
+          <tagsbox :articles="articles"></tagsbox>
         </div>
       </section>
-
     </div>
 
     <div id="app3">

@@ -331,40 +331,38 @@ Vue.component("blog_article_and_news", {
 });
 
 Vue.component("tagsbox", {
-  data() {
-    return tagsarray, articlesarray;
-  },
-  // props: ["tagsarray", "articlesarray"],
+  props: ["articles"],
   methods: {
-    selecttag(index) {
-      // `this` в методе указывает на текущий активный экземпляр
-      console.log("Привет, " + tagsarray[index] + "!");
-      // articlesarray = articles.forEach.filter(
-      //     (item) => item.tag === tagsarray[index]
-      // );
-      console.log(articlesarray);
-      console.log(
-        articlesarray.filter((item) => item.tag === tagsarray[index])
-      );
-      return articlesarray.filter((item) => item.tag === tagsarray[index]);
+    selecttag(tag) {
+      console.log(tag);
+      console.log(articles.filter((item) => item.tag === tag));
     },
   },
-  getArticles: function () {
-    return articlesarray.filter((item) => item.tag === tagsarray[index]);
+
+  computed: {
+    getTags() {
+      let output = [];
+      for (let i = 0; i < articles.length; ++i) {
+        if (!output.includes(articles[i]["tag"])) {
+          output.push(articles[i]["tag"]);
+        }
+      }
+      return output;
+    },
   },
 
   template: `
 <div class="tags__container">
-    <div @click="selecttag(index)" class="tags__item" v-for="(tag, index) in tagsarray" :key="index">{{tag}}</div>
+    <button @click="selecttag(tag)" class="tags__item" v-for="(tag, index) in getTags" :key="index">{{tag}}</button>
 </div>
         `,
 });
 
 Vue.component("blogarticle", {
-  props: ["articlesarray", "getArticles"],
+  props: ["articles", "getTags"],
   template: `
 <div class="articles">
-	<div class="blogarticle" v-for="(blogarticle, index) in articlesarray" :key="index">   
+	<div class="blogarticle" v-for="(blogarticle, index) in articles" :key="index">   
         <h2 class="blogarticle__header">
             {{blogarticle.header}}
         </h2>
@@ -392,74 +390,9 @@ Vue.component("blogarticle", {
         `,
 });
 
-Vue.component("tagsandarticles", {
-  data() {
-    return articlesarray
-  },
-  props: ["tagsarray", "articlesarray"],
-  methods: {
-    selecttag() {
-      // `this` в методе указывает на текущий активный экземпляр
-      console.log("Привет, " + tagsarray[index] + "!");
-
-      console.log(articlesarray);
-      console.log(
-        articlesarray.filter((item) => item.tag === tagsarray[index])
-      );
-      return articlesarray.filter((item) => item.tag === tagsarray[index]);
-    },
-  },
-  computed: {
-    // getArticles: function (index) {
-    //   if (index === undefined) {
-    //     return articlesarray;
-    //   }
-    //   return articlesarray.filter((item) => item.tag === tagsarray[index]);
-    // },
-  },
-  template: `
-  <div class="articles">
-	  <div class="blogarticle" v-for="(blogarticle, index) in selecttag" :key="index">   
-        <h2 class="blogarticle__header">
-            {{blogarticle.header}}
-        </h2>
-        <div class="blogarticle__illustration">
-            <img :src="blogarticle.picture"
-                 :alt="blogarticle.picture"
-                 class="blogarticle__image"
-            />
-        </div>
-        <div class="blogarticle__subscript">
-            <p class="blogarticle__date">{{blogarticle.date}}</p>
-            <p class="blogarticle__info">{{blogarticle.info}}</p>
-        </div>
-        <div class="blogarticle__content" v-html="blogarticle.text">
-          
-        </div>
-		<div class="blogarticle__divider">
-			<p class="divider__sign">”</p>
-			<p class="divider__text">
-				The details are not the details. They make the design.
-			</p>
-		</div>
-   
-</div>
-  <div class="tags">
-      <h2 class="tags__header">Tags</h2>
-          <div class="tags__container">
-            <div @click="getArticle" class="tags__item" v-for="(tag, index) in tagsarray" :key="index">{{tag}}</div>
-          </div>
-  </div>
-</div>
-`,
-});
-
 new Vue({
   el: "#app1",
-  data: {
-    articlesarray: articlesarray,
-    tagsarray: tagsarray,
-  },
+  data: {},
   components: {
     // main__banner: main__banner,
     main__project: main__project,
@@ -469,8 +402,7 @@ new Vue({
 new Vue({
   el: "#app2",
   data: {
-    tagsarray: tagsarray,
-    articlesarray: articlesarray,
+    articles: articles,
   },
 });
 new Vue({
