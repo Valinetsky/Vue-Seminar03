@@ -20,13 +20,7 @@
     </div>
 
     <div id="app2">
-      <section class="content center">
-        <blogarticle :articles="articles"></blogarticle>
-        <div class="tags">
-          <h2 class="tags__header">Tags</h2>
-          <tagsbox :articles="articles"></tagsbox>
-        </div>
-      </section>
+      <tagsbox :articles="articles" :sorttag="sorttag"></tagsbox>
     </div>
 
     <div id="app3">
