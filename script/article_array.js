@@ -63,20 +63,3 @@ const articles = [
     tag: "Another TAG",
   },
 ];
-
-// function addValue(input, property) {
-//     let output = [];
-//     for (let i = 0; i < input.length; ++i) {
-//         if (!output.includes(input[i][property])) {
-//             output.push(input[i][property]);
-//         }
-//     }
-//     return output;
-// }
-
-// const tagsarray = addValue(articles, "tag");
-
-// let articlesarray = [...articles];
-
-// console.log(tagsarray);
-// console.log(articlesarray);

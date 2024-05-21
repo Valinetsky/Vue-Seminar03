@@ -400,8 +400,8 @@ new Vue({
 new Vue({
   el: "#app2",
   data: {
-    articles: articles,
     sorttag: "",
+    articles: articles,
   },
 });
 new Vue({
