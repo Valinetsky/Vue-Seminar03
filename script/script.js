@@ -388,46 +388,6 @@ Vue.component("tagsbox", {
         `,
 });
 
-// Vue.component("blogarticle", {
-//   props: ["articles", "sorttag"],
-//   template: `
-// <div class="articles">
-// 	<div class="blogarticle" v-for="(blogarticle, index) in getArticles" :key="index">
-//         <h2 class="blogarticle__header">
-//             {{blogarticle.header}}
-//         </h2>
-//         <div class="blogarticle__illustration">
-//             <img :src="blogarticle.picture"
-//                  :alt="blogarticle.picture"
-//                  class="blogarticle__image"
-//             />
-//         </div>
-//         <div class="blogarticle__subscript">
-//             <p class="blogarticle__date">{{blogarticle.date}}</p>
-//             <p class="blogarticle__info">{{blogarticle.info}}</p>
-//         </div>
-//         <div class="blogarticle__content" v-html="blogarticle.text">
-
-//         </div>
-// 		<div class="blogarticle__divider">
-// 			<p class="divider__sign">”</p>
-// 			<p class="divider__text">
-// 				The details are not the details. They make the design.
-// 			</p>
-// 		</div>
-//     </div>
-// </div>
-//         `,
-//   computed: {
-//     getArticles() {
-//       if (sorttag === "") {
-//         return articles;
-//       }
-//       return articles.filter((a) => a.tag === sorttag);
-//     },
-//   },
-// });
-
 new Vue({
   el: "#app1",
   data: {},
