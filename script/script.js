@@ -1,52 +1,52 @@
 const globalCardsData = {
-  cards: [
-    {
-      id: 1,
-      image: "./img/news_image01.jpg",
-      design: "Kitchan Design",
-      heading: "Let’s Get Solution For Building Construction Work",
-      timing: "26 December,2022",
-    },
-    {
-      id: 2,
-      image: "img/news_image02.jpg",
-      design: "Living Design",
-      heading: "Low Cost Latest Invented Interior Designing Ideas.",
-      timing: "22 December,2022",
-    },
-    {
-      id: 3,
-      image: "img/news_image03.jpg",
-      design: "Interior Design",
-      heading: "Best For Any Office & Business Interior Solution",
-      timing: "25 December,2022",
-    },
-    {
-      id: 4,
-      image: "img/news_image04.jpg",
-      design: "Kitchan Design",
-      heading: "Let’s Get Solution For Building Construction Work",
-      timing: "26 December,2022",
-    },
-    {
-      id: 5,
-      image: "img/news_image05.jpg",
-      design: "Living Design",
-      heading: "Low Cost Latest Invented Interior Designing Ideas.",
-      timing: "22 December,2022",
-    },
-    {
-      id: 6,
-      image: "img/news_image06.jpg",
-      design: "Interior Design",
-      heading: "Best For Any Office & Business Interior Solution",
-      timing: "25 December,2022",
-    },
-  ],
+    cards: [
+        {
+            id: 1,
+            image: "./img/news_image01.jpg",
+            design: "Kitchan Design",
+            heading: "Let’s Get Solution For Building Construction Work",
+            timing: "26 December,2022",
+        },
+        {
+            id: 2,
+            image: "img/news_image02.jpg",
+            design: "Living Design",
+            heading: "Low Cost Latest Invented Interior Designing Ideas.",
+            timing: "22 December,2022",
+        },
+        {
+            id: 3,
+            image: "img/news_image03.jpg",
+            design: "Interior Design",
+            heading: "Best For Any Office & Business Interior Solution",
+            timing: "25 December,2022",
+        },
+        {
+            id: 4,
+            image: "img/news_image04.jpg",
+            design: "Kitchan Design",
+            heading: "Let’s Get Solution For Building Construction Work",
+            timing: "26 December,2022",
+        },
+        {
+            id: 5,
+            image: "img/news_image05.jpg",
+            design: "Living Design",
+            heading: "Low Cost Latest Invented Interior Designing Ideas.",
+            timing: "22 December,2022",
+        },
+        {
+            id: 6,
+            image: "img/news_image06.jpg",
+            design: "Interior Design",
+            heading: "Best For Any Office & Business Interior Solution",
+            timing: "25 December,2022",
+        },
+    ],
 };
 
 Vue.component("page-header", {
-  template: `
+    template: `
 <header class="header center">
   <div class="header__logo">
     <img src="img/Logo.svg" alt="logo" />
@@ -61,7 +61,7 @@ Vue.component("page-header", {
 });
 
 Vue.component("main__banner", {
-  template: `
+    template: `
 <section class="baner center">
   <div class="baner__wrap">
     <div class="baner__wrap-content">
@@ -82,8 +82,8 @@ Vue.component("main__banner", {
 });
 
 Vue.component("banner", {
-  props: ["image", "box"],
-  template: `
+    props: ["image", "box"],
+    template: `
 <section class="banner center" :style="{backgroundImage:'url(' + image + ')', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundSize: 'cover'}">
       <div v-if="box" class="banner__intro">
         <h1 class="banner__intro-title">Articles & News {{box}}</h1>
@@ -93,7 +93,7 @@ Vue.component("banner", {
 });
 
 var main__project = {
-  template: `
+    template: `
   <section class="project center">
     <h2 class="project__title">Follow Our Projects</h2>
     <p class="project__text">
@@ -167,7 +167,7 @@ var main__project = {
 };
 
 var main__counter = {
-  template: `
+    template: `
   <section class="counter center">
     <div class="counter__wrap">
       <div class="counter__item">
@@ -192,7 +192,7 @@ var main__counter = {
 };
 
 Vue.component("page-footer", {
-  template: `    
+    template: `    
 <footer class="footer center">
   <div class="footer__logo">
     <div class="header__logo">
@@ -249,8 +249,8 @@ Vue.component("page-footer", {
 });
 
 Vue.component("product", {
-  props: ["image", "design", "heading", "timing"],
-  template: `
+    props: ["image", "design", "heading", "timing"],
+    template: `
   <div class="blog__item">
     <div class="blog__item-image">
       <img :src="image" :alt="image" />
@@ -270,11 +270,11 @@ Vue.component("product", {
 });
 
 Vue.component("products_small", {
-  data() {
-    return globalCardsData;
-  },
-  props: ["counter"],
-  template: `
+    data() {
+        return globalCardsData;
+    },
+    props: ["counter"],
+    template: `
   <div class="blog__items">
       <product v-for="(card, index) in cards.slice(0, 3)" :key="card.id" :image="card.image" :design="card.design" :heading="card.heading" :timing="card.timing" :class="{ 'blog__item-select': index === 1 }"></product>
   </div>
@@ -282,11 +282,11 @@ Vue.component("products_small", {
 });
 
 Vue.component("products_all", {
-  data() {
-    return globalCardsData;
-  },
-  props: ["counter"],
-  template: `
+    data() {
+        return globalCardsData;
+    },
+    props: ["counter"],
+    template: `
   <div class="blog__items" >
     <product v-for="(card, index) in cards" :key="card.id" :image="card.image" :design="card.design" :heading="card.heading" :timing="card.timing" :class="{ 'blog__item-select': index === 1 }"></product>
   </div>
@@ -294,11 +294,11 @@ Vue.component("products_all", {
 });
 
 Vue.component("main_article_and_news", {
-  data() {
-    return globalCardsData;
-  },
-  props: ["counter"],
-  template: `
+    data() {
+        return globalCardsData;
+    },
+    props: ["counter"],
+    template: `
 <section class="blog center">
   <h2 class="blog__title">Articles & News</h2>
   <p class="blog__text">
@@ -313,11 +313,11 @@ Vue.component("main_article_and_news", {
 });
 
 Vue.component("blog_article_and_news", {
-  data() {
-    return globalCardsData;
-  },
-  props: ["counter"],
-  template: `
+    data() {
+        return globalCardsData;
+    },
+    props: ["counter"],
+    template: `
 <section class="blog center">
   <h2 class="blog__title">Articles & News</h2>
   <p class="blog__text">
@@ -331,29 +331,39 @@ Vue.component("blog_article_and_news", {
 });
 
 Vue.component("tagsbox", {
-  data() {
-    return {
-      sortParam: "",
-      articles: articles,
-    };
-  },
-  computed: {
-    getTags() {
-      let output = [];
-      for (let i = 0; i < articles.length; ++i) {
-        if (!output.includes(articles[i]["tag"])) {
-          output.push(articles[i]["tag"]);
-        }
-      }
-      return output;
+    data() {
+        return {
+            sortParam: "",
+            articles: articles,
+            isActive: {},
+        };
     },
-    filteredList() {
-      if (this.sortParam === "") return this.articles;
-      else return this.articles.filter((a) => a.tag === this.sortParam);
+    methods: {
+        show: function () {
+            this.isActive = true;
+        },
+        selectTag(id) {
+            this.$set(this.isActive, id, !this.isActive[id]);
+            this.$emit("select-tag", id);
+        },
     },
-  },
+    computed: {
+        getTags() {
+            let output = [];
+            for (let i = 0; i < articles.length; ++i) {
+                if (!output.includes(articles[i]["tag"])) {
+                    output.push(articles[i]["tag"]);
+                }
+            }
+            return output;
+        },
+        filteredList() {
+            if (this.sortParam === "") return this.articles;
+            else return this.articles.filter((a) => a.tag === this.sortParam);
+        },
+    },
 
-  template: `
+    template: `
 <section class="content center">
   <div class="articles">
     <div class="blogarticle" v-for="(blogarticle, index) in filteredList" :key="index">   
@@ -381,7 +391,7 @@ Vue.component("tagsbox", {
   <div class="tags">
   <h2 class="tags__header">Tags</h2>
     <div class="tags__container">
-      <button @click="sortParam=tag" class="tags__item" v-for="(tag, index) in getTags" :key="index">{{tag}}</button>
+      <button :class="{active: isActive[index]}" @click="sortParam=tag, selectTag(index)" class="tags__item" v-for="(tag, index) in getTags" :key="index">{{tag}}</button>
     </div>
   </div>
 </section>
@@ -389,21 +399,21 @@ Vue.component("tagsbox", {
 });
 
 new Vue({
-  el: "#app1",
-  data: {},
-  components: {
-    // main__banner: main__banner,
-    main__project: main__project,
-    main__counter: main__counter,
-  },
+    el: "#app1",
+    data: {},
+    components: {
+        // main__banner: main__banner,
+        main__project: main__project,
+        main__counter: main__counter,
+    },
 });
 new Vue({
-  el: "#app2",
-  data: {
-    sorttag: "",
-    articles: articles,
-  },
+    el: "#app2",
+    data: {
+        sorttag: "",
+        articles: articles,
+    },
 });
 new Vue({
-  el: "#app3",
+    el: "#app3",
 });

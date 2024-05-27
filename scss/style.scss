@@ -515,12 +515,16 @@ a {
         border-radius: 10px;
         color: #292f36;
         background: #f4f0ec;
-        &:hover{
+        &:hover {
             cursor: pointer;
         }
-        &_active {
-            color: #fff;
-            background: #292f36;
-        }
+        // &_active {
+        //     color: #fff;
+        //     background: #292f36;
+        // }
     }
+}
+.active {
+    color: #fff;
+    background: #292f36;
 }
