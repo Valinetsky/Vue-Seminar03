@@ -335,17 +335,8 @@ Vue.component("tagsbox", {
         return {
             sortParam: "",
             articles: articles,
-            isActive: {},
+            activeIndex: -1,
         };
-    },
-    methods: {
-        show: function () {
-            this.isActive = true;
-        },
-        selectTag(id) {
-            this.$set(this.isActive, id, !this.isActive[id]);
-            this.$emit("select-tag", id);
-        },
     },
     computed: {
         getTags() {
@@ -360,6 +351,12 @@ Vue.component("tagsbox", {
         filteredList() {
             if (this.sortParam === "") return this.articles;
             else return this.articles.filter((a) => a.tag === this.sortParam);
+        },
+    },
+    methods: {
+        selectTag(id) {
+            this.activeIndex = id;
+            console.log(this.activeIndex);
         },
     },
 
@@ -391,11 +388,49 @@ Vue.component("tagsbox", {
   <div class="tags">
   <h2 class="tags__header">Tags</h2>
     <div class="tags__container">
-      <button :class="{active: isActive[index]}" @click="sortParam=tag, selectTag(index)" class="tags__item" v-for="(tag, index) in getTags" :key="index">{{tag}}</button>
+      <button v-for="(tag, index) in getTags" :key="index" :class="{ active: activeIndex === index }"
+       @click="sortParam=tag, selectTag(index)" class="tags__item" >{{tag}}</button>
     </div>
   </div>
 </section>
         `,
+});
+
+// Часть 2. Задание Vue
+
+// Вы разрабатываете приложение для интернет-магазина и у вас есть компонент Vue под названием "ProductDetails". Компонент отображает детали о конкретном продукте, включая его название, цену и статус доступности.
+
+// Внутри компонента "ProductDetails" создайте свойство "product" с объектом, представляющим информацию о продукте. Объект должен иметь свойства "name" (название продукта), "price" (цена продукта) и "available" (флаг, указывающий на доступность продукта).
+
+// Используя вычисляемое свойство, назовите его "formattedPrice", которое будет возвращать форматированную цену продукта со знаком валюты. Например, если цена равна 99.99, вычисляемое свойство должно вернуть строку "$99.99".
+
+// В компоненте "ProductDetails" отобразите название продукта, его форматированную цену и статус доступности.
+
+// Если продукт доступен, отобразите текст "Available", в противном случае - "Out of stock".
+
+Vue.component("ProductDetails", {
+    data() {
+        return {
+            product: {
+                name: "Pineapple",
+                price: 99.99,
+                available: true,
+            },
+        };
+    },
+    computed: {
+        formattedPrice: function () {
+            return `$${this.product.price}`;
+        },
+    },
+    template: `
+  <div>
+      <p>name: {{ product.name }}</p>
+      <p>price: {{ formattedPrice }}</p>
+      <p v-if="product.available">Available</p>
+      <p v-else>Out of stock</p>
+  </div>
+  `,
 });
 
 new Vue({
