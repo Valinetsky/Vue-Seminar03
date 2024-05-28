@@ -528,3 +528,116 @@ a {
     color: #fff;
     background: #292f36;
 }
+
+.project {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    &_content {
+        padding: 0 271px;
+    }
+    &_header {
+        font-family: DM Serif Display;
+        font-size: 50px;
+        line-height: 62.5px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        margin-bottom: 11px;
+    }
+
+    &_text {
+        font-family: Jost;
+        font-size: 22px;
+        line-height: 33px;
+        letter-spacing: 0.01em;
+        text-align: left;
+        p {
+            margin-bottom: 40px;
+        }
+    }
+    &_slider {
+        margin-top: 100px;
+        margin-bottom: 200px;
+    }
+}
+.slider {
+    &_container {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 99px;
+        overflow: hidden;
+    }
+    &_imagebox {
+    }
+    &_image {
+        position: relative;
+        img {
+            border-radius: 50px;
+        }
+    }
+    &_zoom {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 47px 47px 48px 48px;
+        background-color: white;
+        box-shadow: 0px 10px 20px 0px #c0c0c040;
+        display: inline-block;
+        border-radius: 50%;
+    }
+    &_switch {
+        display: flex;
+        gap: 9px;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 160px;
+    }
+
+    &_btn {
+        width: 18px;
+        height: 18px;
+        border: 2px solid black;
+        background: white;
+        border-radius: 50%;
+    }
+}
+
+.noresponse {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 160px);
+    &_content {
+        width: 569px;
+    }
+
+    &_header {
+        font-family: "DM Serif Display";
+        font-size: 250px;
+        line-height: 125%;
+        color: #cda274;
+        margin-bottom: -50px;
+    }
+
+    &_text {
+        font-family: "DM Serif Display";
+        font-size: 35px;
+        line-height: 150%;
+        align-items: center;
+        letter-spacing: 0.01em;
+        color: #292f36;
+        margin-bottom: 50px;
+    }
+
+    &_background {
+        position: absolute;
+        top: 160px;
+        right: 0;
+        overflow: hidden;
+        img {
+            height: calc(100vh - 170px);
+            width: 50vw;
+            border-radius: 0 0 0 288px;
+            object-fit: cover;
+        }
+    }
+}

@@ -54,7 +54,7 @@ Vue.component("page-header", {
   </div>
   <div class="header__menu">
     <a class="header__link" href="index.html">Home</a>
-    <a class="header__link" href="#">Project</a>
+    <a class="header__link" href="project_details.html">Project</a>
     <a class="header__link" href="blog.html">Blog</a>
   </div>
 </header>`,
@@ -232,9 +232,9 @@ Vue.component("page-footer", {
   </div>
   <div class="footer__menu">
     <p class="footer__menu-title">Pages</p>
-    <a class="footer__menu-link" href="#">Home</a>
-    <a class="footer__menu-link" href="#">Project</a>
-    <a class="footer__menu-link" href="#">Blog</a>
+    <a class="footer__menu-link" href="index.html">Home</a>
+    <a class="footer__menu-link" href="project_details.html">Project</a>
+    <a class="footer__menu-link" href="blog.html">Blog</a>
   </div>
   <div class="footer__services"></div>
   <div class="footer__contact">
@@ -452,3 +452,6 @@ new Vue({
 new Vue({
     el: "#app3",
 });
+// new Vue({
+//     el: "#app4",
+// });
