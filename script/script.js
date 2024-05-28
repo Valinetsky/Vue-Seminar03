@@ -82,12 +82,12 @@ Vue.component("main__banner", {
 });
 
 Vue.component("banner", {
-    props: ["image", "box"],
+    props: ["image", "box", "head", "text"],
     template: `
 <section class="banner center" :style="{backgroundImage:'url(' + image + ')', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundSize: 'cover'}">
       <div v-if="box" class="banner__intro">
-        <h1 class="banner__intro-title">Articles & News {{box}}</h1>
-        <p class="banner__intro-text">Home / Blog</p>
+        <h1 class="banner__intro-title">{{head}}</h1>
+        <p class="banner__intro-text">{{text}}</p>
       </div>
 </section>`,
 });
@@ -233,7 +233,7 @@ Vue.component("page-footer", {
   <div class="footer__menu">
     <p class="footer__menu-title">Pages</p>
     <a class="footer__menu-link" href="index.html">Home</a>
-    <a class="footer__menu-link" href="project_details.html">Project</a>
+    <a class="footer__menu-link" href="project.html">Project</a>
     <a class="footer__menu-link" href="blog.html">Blog</a>
   </div>
   <div class="footer__services"></div>
