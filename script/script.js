@@ -54,7 +54,7 @@ Vue.component("page-header", {
   </div>
   <div class="header__menu">
     <a class="header__link" href="index.html">Home</a>
-    <a class="header__link" href="project_details.html">Project</a>
+    <a class="header__link" href="project.html">Project</a>
     <a class="header__link" href="blog.html">Blog</a>
   </div>
 </header>`,
